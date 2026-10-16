@@ -1,0 +1,16 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # git itself (php-git), as services: reading a repository's history, and
+    # committing given paths as whoever runs PHP — an application running git
+    # as someone else aliases the process factory to its own.
+    Wexample\PhpGit\Class\GitRepositoryReader: ~
+
+    Wexample\PhpGit\Class\GitProcessFactory: ~
+
+    Wexample\PhpGit\Interface\GitProcessFactoryInterface: '@Wexample\PhpGit\Class\GitProcessFactory'
+
+    Wexample\PhpGit\Class\GitCommitter: ~
