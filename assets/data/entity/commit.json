@@ -1,0 +1,227 @@
+{
+    "name": "commit",
+    "type": "class",
+    "description": "One commit of a repository, as its history lists it.\nAn entity without an ORM mapping: a commit is in `.git`, never in a table,\nand is read there (CommitProvider). It is an entity for what being one gives\non the way out — the pseudocode export, the generated `Commit.ts` and its\nrepository, and a history being a collection of entities like any other.\nDoctrine skips a class carrying no `#[ORM\\Entity]`.",
+    "properties": [
+        {
+            "name": "id",
+            "type": "Symfony\\Component\\Uid\\Uuid"
+        },
+        {
+            "name": "repository",
+            "type": "string"
+        },
+        {
+            "name": "hash",
+            "type": "string"
+        },
+        {
+            "name": "parents",
+            "type": "array",
+            "default": []
+        },
+        {
+            "name": "subject",
+            "type": "string"
+        },
+        {
+            "name": "author",
+            "type": "string"
+        },
+        {
+            "name": "date",
+            "type": "DateTimeImmutable"
+        },
+        {
+            "name": "refs",
+            "type": "array",
+            "default": []
+        }
+    ],
+    "methods": [
+        {
+            "type": "method",
+            "name": "buildEntityPath",
+            "parameters": [
+                {
+                    "type": "string",
+                    "name": "className"
+                }
+            ],
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getEntityKeyName",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getEntityShortName",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getId",
+            "return": {
+                "type": "Symfony\\Component\\Uid\\Uuid"
+            }
+        },
+        {
+            "type": "method",
+            "name": "setId",
+            "parameters": [
+                {
+                    "type": "Symfony\\Component\\Uid\\Uuid",
+                    "name": "id"
+                }
+            ],
+            "return": {
+                "type": "void"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getTableizedName",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getCamelName",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "__construct",
+            "parameters": [
+                {
+                    "type": "string",
+                    "name": "repository"
+                },
+                {
+                    "type": "string",
+                    "name": "hash"
+                },
+                {
+                    "type": "string",
+                    "name": "subject"
+                },
+                {
+                    "type": "string",
+                    "name": "author"
+                },
+                {
+                    "type": "DateTimeImmutable",
+                    "name": "date"
+                }
+            ]
+        },
+        {
+            "type": "method",
+            "name": "idFor",
+            "description": "The identity of a commit, which is its repository and its hash.",
+            "parameters": [
+                {
+                    "type": "string",
+                    "name": "repository"
+                },
+                {
+                    "type": "string",
+                    "name": "hash"
+                }
+            ],
+            "return": {
+                "type": "Uuid"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getRepository",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getHash",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getParents",
+            "description": "",
+            "return": {
+                "type": "array"
+            }
+        },
+        {
+            "type": "method",
+            "name": "setParents",
+            "description": "",
+            "parameters": [
+                {
+                    "type": "array",
+                    "name": "parents"
+                }
+            ],
+            "return": {
+                "type": "self"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getSubject",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getAuthor",
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getDate",
+            "return": {
+                "type": "DateTimeImmutable"
+            }
+        },
+        {
+            "type": "method",
+            "name": "getRefs",
+            "description": "",
+            "return": {
+                "type": "array"
+            }
+        },
+        {
+            "type": "method",
+            "name": "setRefs",
+            "description": "",
+            "parameters": [
+                {
+                    "type": "array",
+                    "name": "refs"
+                }
+            ],
+            "return": {
+                "type": "self"
+            }
+        }
+    ]
+}

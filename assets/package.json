@@ -1,0 +1,7 @@
+{
+  "name": "@wexample/symfony-git",
+  "version": "1.0.1",
+  "peerDependencies": {
+    "@wexample/js-api-entity": "*"
+  }
+}

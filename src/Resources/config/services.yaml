@@ -14,3 +14,23 @@ services:
     Wexample\PhpGit\Interface\GitProcessFactoryInterface: '@Wexample\PhpGit\Class\GitProcessFactory'
 
     Wexample\PhpGit\Class\GitCommitter: ~
+
+    Wexample\SymfonyGit\Service\:
+        resource: '../../Service'
+
+    # The repositories the API serves: those the application declared
+    # (`wexample_symfony_git.repositories`), unless it aliases the resolver to
+    # its own.
+    Wexample\SymfonyGit\Service\ConfiguredGitRepositoryResolver:
+        arguments:
+            $repositories: '%wexample_symfony_git.repositories%'
+
+    Wexample\SymfonyGit\Interface\GitRepositoryResolverInterface: '@Wexample\SymfonyGit\Service\ConfiguredGitRepositoryResolver'
+
+    Wexample\SymfonyGit\Api\Controller\:
+        resource: '../../Api/Controller/*'
+        tags: ['controller.service_arguments']
+
+    Wexample\SymfonyGit\Api\Normalizer\:
+        resource: '../../Api/Normalizer/*'
+        tags: ['serializer.normalizer']
