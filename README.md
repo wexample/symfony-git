@@ -1,6 +1,6 @@
 # symfony-git
 
-Version: 2.0.0
+Version: 2.0.1
 
 A git repository's history served by the API, and git's services for a Symfony application
 
@@ -29,7 +29,7 @@ The suite includes packages for configuration management, file handling, prompts
 - wexample/php-git: >=2.0.0
 - wexample/php-pseudocode: >=2.2.0
 - wexample/symfony-api: >=14.0.0
-- wexample/symfony-helpers: >=17.0.0
+- wexample/symfony-helpers: >=18.0.0
 - wexample/symfony-pseudocode: >=4.0.0
 
 ## Versioning & Compatibility Policy
