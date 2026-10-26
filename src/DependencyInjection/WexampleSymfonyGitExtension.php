@@ -3,6 +3,7 @@
 namespace Wexample\SymfonyGit\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Wexample\SymfonyGit\Interface\GitActivityProviderInterface;
 use Wexample\SymfonyHelpers\DependencyInjection\AbstractWexampleSymfonyExtension;
 
 class WexampleSymfonyGitExtension extends AbstractWexampleSymfonyExtension
@@ -22,6 +23,12 @@ class WexampleSymfonyGitExtension extends AbstractWexampleSymfonyExtension
                 ? $container->getParameter(self::PARAMETER_REPOSITORIES)
                 : []
         );
+
+        // Implemented by the bundles knowing repositories (symfony-remote-git):
+        // the tag follows the interface wherever it is implemented.
+        $container
+            ->registerForAutoconfiguration(GitActivityProviderInterface::class)
+            ->addTag(GitActivityProviderInterface::TAG);
 
         $this->loadConfig(
             __DIR__,
