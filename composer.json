@@ -1,7 +1,7 @@
 {
   "name": "wexample/symfony-git",
   "description": "A git repository's history served by the API, and git's services for a Symfony application",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "type": "library",
   "license": "MIT",
   "autoload": {
