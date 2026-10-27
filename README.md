@@ -1,6 +1,6 @@
 # symfony-git
 
-Version: 4.0.0
+Version: 4.0.1
 
 A git repository's history served by the API, and git's services for a Symfony application
 
