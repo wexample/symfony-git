@@ -20,7 +20,7 @@ use Wexample\SymfonyHelpers\Controller\AbstractController;
  * A repository's history, as the collection of one kind of entity: the
  * `CommitRepository.ts` generated from the same class reads it page after page.
  */
-#[Route(path: 'api/commit/', name: 'api_commit_')]
+#[Route(path: '_api/commit/', name: 'api_commit_')]
 class CommitController extends AbstractApiController
 {
     final public const string ROUTE_LIST = 'list';
