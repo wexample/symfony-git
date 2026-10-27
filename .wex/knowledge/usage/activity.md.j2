@@ -4,4 +4,4 @@
 
 It knows them from the services implementing `GitActivityProviderInterface` — autoconfigured, the tag follows the interface —, each telling its repositories' names and the commits of each day: a repository two providers know is counted once, their commits are added. symfony-remote-git is one, for GitHub and GitLab accounts.
 
-The chart `git-activity` (symfony-charts) serves those days as points, one a day, for a calendar: `chart('calendar', {}, { source: 'git-activity' })` (symfony-charts-ds).
+symfony-git-ds draws them: `git_activity()` for the figures, `git_activity_calendar()` for the days.
