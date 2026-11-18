@@ -2,6 +2,7 @@
 
 namespace Wexample\SymfonyGit\Api\Controller;
 
+use Wexample\SymfonyApi\Api\Attribute\ApiAccess;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 use Wexample\SymfonyApi\Api\Attribute\ApiResponseData;
@@ -21,6 +22,7 @@ use Wexample\SymfonyHelpers\Controller\AbstractController;
  * `CommitRepository.ts` generated from the same class reads it page after page.
  */
 #[Route(path: '_api/commit/', name: 'api_commit_')]
+#[ApiAccess(ApiAccess::CONTROLLER, "the repositories the application's GitRepositoryResolverInterface names, and no other")]
 class CommitController extends AbstractApiController
 {
     final public const string ROUTE_LIST = 'list';
